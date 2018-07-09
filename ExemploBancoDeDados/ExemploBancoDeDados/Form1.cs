@@ -36,7 +36,7 @@ namespace ExemploBancoDeDados
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SqlConnection conexao = new SqlConnection();
+            SqlConnection conexao = new SqlConnection(caminhoConexao);
             conexao.ConnectionString = caminhoConexao;
             conexao.Open();
             SqlCommand comando = new SqlCommand("SELECT nome FROM cores;");
@@ -63,10 +63,11 @@ namespace ExemploBancoDeDados
             connection.Open();
             SqlCommand command = new SqlCommand();
             command.Connection = connection;
-            command.CommandText = "DELETE FROM cores WHERE nome = @NOME";
+            command.CommandText = "DELETE FROM cores WHERE nome = @NOMEDACOR";
             string corApagar = cbCorApagar.SelectedItem.ToString();
             command.Parameters.AddWithValue("@NOMEDACOR", corApagar);
             command.ExecuteNonQuery();
+            cbCorApagar.SelectedIndex = -1;
 
 
 
@@ -79,6 +80,14 @@ namespace ExemploBancoDeDados
             SqlConnection conexao = new SqlConnection(caminhoConexao);
             conexao.Open();
 
+            SqlCommand command = new SqlCommand("SELECT nome FROM cores ORDER BY nome", conexao);
+            DataTable table = new DataTable();
+            table.Load(command.ExecuteReader());
+            cbCorApagar.Items.Clear();
+            for (int i = 0; i < table.Rows.Count; i++)
+            {
+                cbCorApagar.Items.Add(table.Rows[i][0].ToString());
+            }
 
             conexao.Close();
         }
