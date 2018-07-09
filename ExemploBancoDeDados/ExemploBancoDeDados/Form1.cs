@@ -69,9 +69,6 @@ namespace ExemploBancoDeDados
             command.ExecuteNonQuery();
             cbCorApagar.SelectedIndex = -1;
 
-
-
-
             connection.Close();
         }
 
@@ -89,6 +86,34 @@ namespace ExemploBancoDeDados
                 cbCorApagar.Items.Add(table.Rows[i][0].ToString());
             }
 
+            conexao.Close();
+        }
+
+        private void cbCorApagar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbCorApagar.SelectedIndex != -1)
+            {
+                txtNovoNome.Text = cbCorApagar.SelectedItem.ToString();
+
+            }
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            SqlConnection conexao = new SqlConnection(caminhoConexao);
+            conexao.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = conexao;
+            comando.CommandText = "UPDATE cores SET nome = @NOVONOME WHERE nome = @ANTIGONOME";
+            string novoNome = txtNovoNome.Text;
+            string antigoNome = cbCorApagar.SelectedItem.ToString();
+
+            comando.Parameters.AddWithValue("@NOVONOME", novoNome);
+            comando.Parameters.AddWithValue("@ANTIGONOME", antigoNome);
+            comando.ExecuteNonQuery();
+
+            cbCorApagar.SelectedIndex = -1;
+            txtNovoNome.Clear();
             conexao.Close();
         }
     }

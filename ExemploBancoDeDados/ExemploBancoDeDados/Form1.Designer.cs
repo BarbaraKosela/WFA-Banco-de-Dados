@@ -37,6 +37,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbCorApagar = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.txtNovoNome = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtCor
@@ -120,12 +123,42 @@
             this.cbCorApagar.Size = new System.Drawing.Size(283, 28);
             this.cbCorApagar.TabIndex = 9;
             this.cbCorApagar.DropDown += new System.EventHandler(this.cbCorApagar_DropDown);
+            this.cbCorApagar.SelectedIndexChanged += new System.EventHandler(this.cbCorApagar_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(414, 185);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(124, 20);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "NOVO NOME:";
+            // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(603, 241);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(149, 44);
+            this.btnAlterar.TabIndex = 11;
+            this.btnAlterar.Text = "ALTERAR";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
+            // txtNovoNome
+            // 
+            this.txtNovoNome.Location = new System.Drawing.Point(415, 208);
+            this.txtNovoNome.Name = "txtNovoNome";
+            this.txtNovoNome.Size = new System.Drawing.Size(337, 27);
+            this.txtNovoNome.TabIndex = 10;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 365);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.btnAlterar);
+            this.Controls.Add(this.txtNovoNome);
             this.Controls.Add(this.cbCorApagar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button3);
@@ -155,6 +188,9 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbCorApagar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.TextBox txtNovoNome;
     }
 }
 
