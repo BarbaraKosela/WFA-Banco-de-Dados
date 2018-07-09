@@ -52,7 +52,34 @@ namespace ExemploBancoDeDados
                 string cor = dataTable.Rows[i][0].ToString();
                 sb.AppendLine(cor);
             }
+            rtbAtualizar.Clear();
             rtbAtualizar.AppendText(sb.ToString());
+            conexao.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(caminhoConexao);
+            connection.Open();
+            SqlCommand command = new SqlCommand();
+            command.Connection = connection;
+            command.CommandText = "DELETE FROM cores WHERE nome = @NOME";
+            string corApagar = cbCorApagar.SelectedItem.ToString();
+            command.Parameters.AddWithValue("@NOMEDACOR", corApagar);
+            command.ExecuteNonQuery();
+
+
+
+
+            connection.Close();
+        }
+
+        private void cbCorApagar_DropDown(object sender, EventArgs e)
+        {
+            SqlConnection conexao = new SqlConnection(caminhoConexao);
+            conexao.Open();
+
+
             conexao.Close();
         }
     }

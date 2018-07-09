@@ -10,3 +10,9 @@ C:\Users\104962\Documents\ExemploBancoDeDados\ExemploBancoDeDados\obj\Debug\Exem
 C:\Users\104962\Documents\GitHub\WFA-Banco-de-Dados\ExemploBancoDeDados\ExemploBancoDeDados\bin\Debug\ExemploBancoDeDados.exe.config
 C:\Users\104962\Documents\GitHub\WFA-Banco-de-Dados\ExemploBancoDeDados\ExemploBancoDeDados\obj\Debug\ExemploBancoDeDados.exe
 C:\Users\104962\Documents\GitHub\WFA-Banco-de-Dados\ExemploBancoDeDados\ExemploBancoDeDados\obj\Debug\ExemploBancoDeDados.pdb
+C:\Users\104962\Documents\GitHub\WFA-Banco-de-Dados\ExemploBancoDeDados\ExemploBancoDeDados\bin\Debug\ExemploBancoDeDados.exe
+C:\Users\104962\Documents\GitHub\WFA-Banco-de-Dados\ExemploBancoDeDados\ExemploBancoDeDados\bin\Debug\ExemploBancoDeDados.pdb
+C:\Users\104962\Documents\GitHub\WFA-Banco-de-Dados\ExemploBancoDeDados\ExemploBancoDeDados\obj\Debug\ExemploBancoDeDados.csprojResolveAssemblyReference.cache
+C:\Users\104962\Documents\GitHub\WFA-Banco-de-Dados\ExemploBancoDeDados\ExemploBancoDeDados\obj\Debug\ExemploBancoDeDados.Form1.resources
+C:\Users\104962\Documents\GitHub\WFA-Banco-de-Dados\ExemploBancoDeDados\ExemploBancoDeDados\obj\Debug\ExemploBancoDeDados.Properties.Resources.resources
+C:\Users\104962\Documents\GitHub\WFA-Banco-de-Dados\ExemploBancoDeDados\ExemploBancoDeDados\obj\Debug\ExemploBancoDeDados.csproj.GenerateResource.Cache
