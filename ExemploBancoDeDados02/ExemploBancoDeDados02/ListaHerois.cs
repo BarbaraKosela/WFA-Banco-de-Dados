@@ -43,10 +43,12 @@ namespace ExemploBancoDeDados02
                 coluna = "raca";
             }
 
+
+
             string tipoOrdem = "ASC";
             if(radioButton5.Checked)
             {
-                coluna = "DESC";
+                tipoOrdem = "DESC";
             }
                 
 
