@@ -75,5 +75,16 @@ ORDER BY " + colunaParaOrdenar + " " + colunaParaOrdem;
             int quantidade = comando.ExecuteNonQuery();
             connection.Close();
             return quantidade == 1; }
+
+        public double ObterTotalDasContas()
+        {
+            connection.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = connection;
+            comando.CommandText = "SELECT SUM(conta_bancaria) FROM herois";
+            double total =  Convert.ToDouble(comando.ExecuteScalar());
+            connection.Close();
+            return total;
+        }
     }
 }

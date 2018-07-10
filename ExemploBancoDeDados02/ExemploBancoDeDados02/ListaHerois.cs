@@ -78,7 +78,7 @@ namespace ExemploBancoDeDados02
         {
             int linhaSelecionada = dataGridView1.CurrentRow.Index;
             int codigo =Convert.ToInt32(dataGridView1.Rows[linhaSelecionada].Cells[0].Value.ToString());
-            bool apagado = new HeroiRepositorio().Apagar(codigo);
+                bool apagado = new HeroiRepositorio().Apagar(codigo);
             if (apagado)
             {
                 dataGridView1.Rows.RemoveAt(linhaSelecionada);
