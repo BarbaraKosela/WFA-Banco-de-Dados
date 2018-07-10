@@ -305,6 +305,7 @@
             this.Name = "ListaHerois";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de heróis";
+            this.Load += new System.EventHandler(this.ListaHerois_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

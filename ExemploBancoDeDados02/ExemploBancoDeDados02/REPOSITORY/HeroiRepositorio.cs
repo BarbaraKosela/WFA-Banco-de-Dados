@@ -47,11 +47,9 @@ namespace ExemploBancoDeDados02.REPOSITORY
             connection.Open();
             SqlCommand comando = new SqlCommand();
             comando.Connection = connection;
-            comando.CommandText = @"SELECT id, nome, raca, conta_bancaria FROM herois WHERE nome LIKE @PESQUISA OR @raca LIKE @PESQUISA
-ORDER BY @COLUNA @ORDEM";
+            comando.CommandText = @"SELECT id, nome, raca, conta_bancaria FROM herois WHERE nome LIKE @PESQUISA OR raca LIKE @PESQUISA
+ORDER BY " + colunaParaOrdenar + " " + colunaParaOrdem;
             comando.Parameters.AddWithValue("@PESQUISA", textoParaPesquisar);
-            comando.Parameters.AddWithValue("@COLUNA", colunaParaOrdenar);
-            comando.Parameters.AddWithValue("@ORDEM", colunaParaOrdem);
             DataTable tabelaEmMemoria = new DataTable();
             tabelaEmMemoria.Load(comando.ExecuteReader());
             for (int i = 0; i < tabelaEmMemoria.Rows.Count; i++)
@@ -61,7 +59,7 @@ ORDER BY @COLUNA @ORDEM";
                 heroi.Nome = tabelaEmMemoria.Rows[i][1].ToString();
                 heroi.Raca = tabelaEmMemoria.Rows[i][2].ToString();
                 heroi.ContaBancaria = Convert.ToDouble(tabelaEmMemoria.Rows[i][3].ToString());
-                heroi.Add(heroi);
+                herois.Add(heroi);
             }
             connection.Close();
             return herois; }
