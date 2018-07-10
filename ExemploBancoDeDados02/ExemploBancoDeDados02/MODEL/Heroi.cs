@@ -18,5 +18,10 @@ namespace ExemploBancoDeDados02.MODEL
         public char Sexo { get; set; }
         public byte QuantidadeFilmes { get; set; }
         public string Descricao { get; set; }
+
+        internal void Add(Heroi heroi)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using ExemploBancoDeDados02.MODEL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -40,7 +41,30 @@ namespace ExemploBancoDeDados02.REPOSITORY
 
 
         public bool Alterar(Heroi heroi) { return false; }
-        public List<Heroi> ObterTodos() { return null; }
+        public List<Heroi> ObterTodos(string textoParaPesquisar = "%%", string colunaParaOrdenar = "nome", string colunaParaOrdem = "ASC")
+        {
+            List<Heroi> herois = new List<Heroi>();
+            connection.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = connection;
+            comando.CommandText = @"SELECT id, nome, raca, conta_bancaria FROM herois WHERE nome LIKE @PESQUISA OR @raca LIKE @PESQUISA
+ORDER BY @COLUNA @ORDEM";
+            comando.Parameters.AddWithValue("@PESQUISA", textoParaPesquisar);
+            comando.Parameters.AddWithValue("@COLUNA", colunaParaOrdenar);
+            comando.Parameters.AddWithValue("@ORDEM", colunaParaOrdem);
+            DataTable tabelaEmMemoria = new DataTable();
+            tabelaEmMemoria.Load(comando.ExecuteReader());
+            for (int i = 0; i < tabelaEmMemoria.Rows.Count; i++)
+            {
+                Heroi heroi = new Heroi();
+                heroi.Id = Convert.ToInt32(tabelaEmMemoria.Rows[i][0].ToString());
+                heroi.Nome = tabelaEmMemoria.Rows[i][1].ToString();
+                heroi.Raca = tabelaEmMemoria.Rows[i][2].ToString();
+                heroi.ContaBancaria = Convert.ToDouble(tabelaEmMemoria.Rows[i][3].ToString());
+                heroi.Add(heroi);
+            }
+            connection.Close();
+            return herois; }
         public Heroi ObterPeloCodigo(int codigo) { return null; }
         public bool Apagar(int codigo) { return false; }
     }

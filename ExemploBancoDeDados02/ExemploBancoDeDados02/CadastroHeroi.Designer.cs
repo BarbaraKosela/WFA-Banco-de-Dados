@@ -265,7 +265,7 @@
             this.dtpDataNascimento.Size = new System.Drawing.Size(122, 27);
             this.dtpDataNascimento.TabIndex = 17;
             // 
-            // Form1
+            // CadastroHeroi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -290,7 +290,8 @@
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Square721 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
-            this.Name = "Form1";
+            this.Name = "CadastroHeroi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registre seu herói";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
