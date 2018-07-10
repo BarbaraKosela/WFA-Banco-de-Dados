@@ -65,6 +65,15 @@ ORDER BY " + colunaParaOrdenar + " " + colunaParaOrdem;
             connection.Close();
             return herois; }
         public Heroi ObterPeloCodigo(int codigo) { return null; }
-        public bool Apagar(int codigo) { return false; }
+        public bool Apagar(int codigo)
+        {
+            connection.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = connection;
+            comando.CommandText = "DELETE FROM herois WHERE id = @CODIGO";
+            comando.Parameters.AddWithValue("@CODIGO", codigo);
+            int quantidade = comando.ExecuteNonQuery();
+            connection.Close();
+            return quantidade == 1; }
     }
 }
