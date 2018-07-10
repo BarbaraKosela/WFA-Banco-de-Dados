@@ -95,6 +95,13 @@ namespace ExemploBancoDeDados02
         {
             new EstatisticasHerois().ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int linhaSelecionada = dataGridView1.CurrentRow.Index;
+            int codigo = Convert.ToInt32(dataGridView1.Rows[linhaSelecionada].Cells[0].Value.ToString());
+            new CadastroHeroi(codigo).ShowDialog();
+        }
     
     
     }

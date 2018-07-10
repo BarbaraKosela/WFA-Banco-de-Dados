@@ -14,9 +14,37 @@ namespace ExemploBancoDeDados02
 {
     public partial class CadastroHeroi : Form
     {
+        private int codigo;
+
         public CadastroHeroi()
         {
             InitializeComponent();
+        }
+
+        public CadastroHeroi(int codigo)
+        {
+            InitializeComponent();
+            this.codigo = codigo;
+            Heroi heroi = new HeroiRepositorio().ObterPeloCodigo(codigo);
+            txtNome.Text = heroi.Nome;
+            TXTNOMEPESSOA.Text = heroi.NomePessoa;
+            txtcodigo.Text = Convert.ToString(heroi.Id);
+            txtContaBancaria.Text = Convert.ToString(heroi.ContaBancaria);
+            TXTQUANTIDADEFILMES.Text = Convert.ToString(heroi.QuantidadeFilmes);
+            CBRACA.SelectedItem = heroi.Raca;
+            CHBMULHER.Checked = heroi.Sexo == 'm';
+            rtbDescicao.Text = heroi.Descricao;
+            if (heroi.Escuridao)
+            {
+                radioButton1.Checked = true;
+            }
+
+            else
+            {
+                radioButton2.Checked = false;
+            }
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
