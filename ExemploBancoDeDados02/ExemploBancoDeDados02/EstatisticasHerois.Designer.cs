@@ -35,6 +35,8 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.DarkRed;
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(260, 20);
@@ -44,6 +46,8 @@
             // lblTotalContasBancarias
             // 
             this.lblTotalContasBancarias.AutoSize = true;
+            this.lblTotalContasBancarias.BackColor = System.Drawing.Color.DarkRed;
+            this.lblTotalContasBancarias.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblTotalContasBancarias.Location = new System.Drawing.Point(278, 9);
             this.lblTotalContasBancarias.Name = "lblTotalContasBancarias";
             this.lblTotalContasBancarias.Size = new System.Drawing.Size(20, 20);
@@ -54,7 +58,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 402);
+            this.ClientSize = new System.Drawing.Size(502, 42);
             this.Controls.Add(this.lblTotalContasBancarias);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Square721 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

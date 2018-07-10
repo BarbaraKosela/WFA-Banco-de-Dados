@@ -64,7 +64,35 @@ ORDER BY " + colunaParaOrdenar + " " + colunaParaOrdem;
             }
             connection.Close();
             return herois; }
-        public Heroi ObterPeloCodigo(int codigo) { return null; }
+        public Heroi ObterPeloCodigo(int codigo) 
+        
+        
+        {
+            connection.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = connection;
+            comando.CommandText = @"SELECT id, nome, nome_pessoa, raca, conta_bancaria, quantidade_filmes, data_nascimento, sexo FROM herois";
+            comando.Parameters.AddWithValue("@ID", codigo);
+            DataTable tabelaEmMemoria = new DataTable();
+            tabelaEmMemoria.Load(comando.ExecuteReader());
+
+            Heroi heroi = new Heroi();
+            heroi.Id = Convert.ToInt32(tabelaEmMemoria.Rows[0][0].ToString());
+            heroi.Nome = tabelaEmMemoria.Rows[0][1].ToString();
+            heroi.Raca = tabelaEmMemoria.Rows[0][2].ToString();
+            heroi.ContaBancaria = Convert.ToDouble(tabelaEmMemoria.Rows[0][3].ToString());
+            heroi.NomePessoa = tabelaEmMemoria.Rows[0][4].ToString();
+            heroi.QuantidadeFilmes = Convert.ToByte(tabelaEmMemoria.Rows[0][5].ToString());
+            heroi.Sexo = Convert.ToChar(tabelaEmMemoria.Rows[0][6].ToString());
+            heroi.Escuridao = Convert.ToBoolean(tabelaEmMemoria.Rows[0][7].ToString());
+            heroi.Descricao = tabelaEmMemoria.Rows[0][8].ToString();
+            connection.Close();
+            return heroi; 
+        
+        }
+
+
+
         public bool Apagar(int codigo)
         {
             connection.Open();

@@ -47,6 +47,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.rtbDescicao = new System.Windows.Forms.RichTextBox();
             this.dtpDataNascimento = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtcodigo = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,7 +56,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.Maroon;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(277, 459);
+            this.button1.Location = new System.Drawing.Point(277, 488);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(150, 48);
             this.button1.TabIndex = 0;
@@ -66,7 +68,7 @@
             // 
             this.txtNome.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.txtNome.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtNome.Location = new System.Drawing.Point(86, 6);
+            this.txtNome.Location = new System.Drawing.Point(86, 12);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(278, 27);
             this.txtNome.TabIndex = 1;
@@ -76,7 +78,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.DarkRed;
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 20);
             this.label1.TabIndex = 2;
@@ -88,7 +90,7 @@
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.groupBox1.Location = new System.Drawing.Point(99, 53);
+            this.groupBox1.Location = new System.Drawing.Point(99, 82);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(252, 80);
             this.groupBox1.TabIndex = 3;
@@ -126,7 +128,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.DarkRed;
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(12, 151);
+            this.label2.Location = new System.Drawing.Point(12, 180);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(143, 20);
             this.label2.TabIndex = 5;
@@ -136,7 +138,7 @@
             // 
             this.TXTNOMEPESSOA.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.TXTNOMEPESSOA.ForeColor = System.Drawing.SystemColors.Window;
-            this.TXTNOMEPESSOA.Location = new System.Drawing.Point(161, 148);
+            this.TXTNOMEPESSOA.Location = new System.Drawing.Point(161, 177);
             this.TXTNOMEPESSOA.Name = "TXTNOMEPESSOA";
             this.TXTNOMEPESSOA.Size = new System.Drawing.Size(203, 27);
             this.TXTNOMEPESSOA.TabIndex = 4;
@@ -144,6 +146,7 @@
             // CBRACA
             // 
             this.CBRACA.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.CBRACA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBRACA.ForeColor = System.Drawing.SystemColors.Window;
             this.CBRACA.FormattingEnabled = true;
             this.CBRACA.Items.AddRange(new object[] {
@@ -154,7 +157,7 @@
             "Avatar",
             "Alien",
             "Sayajin"});
-            this.CBRACA.Location = new System.Drawing.Point(79, 199);
+            this.CBRACA.Location = new System.Drawing.Point(79, 228);
             this.CBRACA.Name = "CBRACA";
             this.CBRACA.Size = new System.Drawing.Size(203, 28);
             this.CBRACA.TabIndex = 6;
@@ -164,7 +167,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.DarkRed;
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(12, 202);
+            this.label3.Location = new System.Drawing.Point(12, 231);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 20);
             this.label3.TabIndex = 7;
@@ -175,7 +178,7 @@
             this.CHBMULHER.AutoSize = true;
             this.CHBMULHER.BackColor = System.Drawing.Color.DarkRed;
             this.CHBMULHER.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.CHBMULHER.Location = new System.Drawing.Point(326, 202);
+            this.CHBMULHER.Location = new System.Drawing.Point(326, 231);
             this.CHBMULHER.Name = "CHBMULHER";
             this.CHBMULHER.Size = new System.Drawing.Size(101, 24);
             this.CHBMULHER.TabIndex = 8;
@@ -187,7 +190,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.DarkRed;
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(12, 247);
+            this.label4.Location = new System.Drawing.Point(12, 276);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(227, 20);
             this.label4.TabIndex = 10;
@@ -197,7 +200,7 @@
             // 
             this.TXTQUANTIDADEFILMES.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.TXTQUANTIDADEFILMES.ForeColor = System.Drawing.SystemColors.Window;
-            this.TXTQUANTIDADEFILMES.Location = new System.Drawing.Point(245, 244);
+            this.TXTQUANTIDADEFILMES.Location = new System.Drawing.Point(245, 273);
             this.TXTQUANTIDADEFILMES.Name = "TXTQUANTIDADEFILMES";
             this.TXTQUANTIDADEFILMES.Size = new System.Drawing.Size(197, 27);
             this.TXTQUANTIDADEFILMES.TabIndex = 9;
@@ -207,7 +210,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.DarkRed;
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(12, 280);
+            this.label5.Location = new System.Drawing.Point(12, 309);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 20);
             this.label5.TabIndex = 12;
@@ -217,7 +220,7 @@
             // 
             this.txtContaBancaria.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.txtContaBancaria.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtContaBancaria.Location = new System.Drawing.Point(188, 277);
+            this.txtContaBancaria.Location = new System.Drawing.Point(188, 306);
             this.txtContaBancaria.Name = "txtContaBancaria";
             this.txtContaBancaria.Size = new System.Drawing.Size(197, 27);
             this.txtContaBancaria.TabIndex = 11;
@@ -227,7 +230,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.DarkRed;
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(12, 313);
+            this.label6.Location = new System.Drawing.Point(12, 342);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(213, 20);
             this.label6.TabIndex = 14;
@@ -238,7 +241,7 @@
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.DarkRed;
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(12, 349);
+            this.label7.Location = new System.Drawing.Point(12, 378);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(112, 20);
             this.label7.TabIndex = 15;
@@ -248,7 +251,7 @@
             // 
             this.rtbDescicao.BackColor = System.Drawing.SystemColors.GrayText;
             this.rtbDescicao.ForeColor = System.Drawing.SystemColors.Window;
-            this.rtbDescicao.Location = new System.Drawing.Point(16, 372);
+            this.rtbDescicao.Location = new System.Drawing.Point(16, 401);
             this.rtbDescicao.Name = "rtbDescicao";
             this.rtbDescicao.Size = new System.Drawing.Size(411, 81);
             this.rtbDescicao.TabIndex = 16;
@@ -260,17 +263,39 @@
             this.dtpDataNascimento.CalendarMonthBackground = System.Drawing.SystemColors.GrayText;
             this.dtpDataNascimento.CalendarTitleForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dtpDataNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataNascimento.Location = new System.Drawing.Point(229, 308);
+            this.dtpDataNascimento.Location = new System.Drawing.Point(229, 337);
             this.dtpDataNascimento.Name = "dtpDataNascimento";
             this.dtpDataNascimento.Size = new System.Drawing.Size(122, 27);
             this.dtpDataNascimento.TabIndex = 17;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.DarkRed;
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label8.Location = new System.Drawing.Point(12, 48);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(80, 20);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "CODIGO:";
+            // 
+            // txtcodigo
+            // 
+            this.txtcodigo.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.txtcodigo.ForeColor = System.Drawing.SystemColors.Window;
+            this.txtcodigo.Location = new System.Drawing.Point(98, 45);
+            this.txtcodigo.Name = "txtcodigo";
+            this.txtcodigo.Size = new System.Drawing.Size(157, 27);
+            this.txtcodigo.TabIndex = 18;
             // 
             // CadastroHeroi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(454, 515);
+            this.ClientSize = new System.Drawing.Size(454, 545);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.txtcodigo);
             this.Controls.Add(this.dtpDataNascimento);
             this.Controls.Add(this.rtbDescicao);
             this.Controls.Add(this.label7);
@@ -321,6 +346,8 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RichTextBox rtbDescicao;
         private System.Windows.Forms.DateTimePicker dtpDataNascimento;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtcodigo;
     }
 }
 
