@@ -25,15 +25,10 @@ namespace ExemploBancoDeDados02
         }
         private void AtualizarLista()
         {
-            string coluna = "";
-            if(radioButton1.Checked)
-            
-            {
-                coluna = "nome";
+            string coluna = "nome";
+           
 
-            }
-
-            else if (radioButton2.Checked)
+            if (radioButton2.Checked)
             {
                 coluna = "conta_bancaria";
             }
@@ -50,10 +45,12 @@ namespace ExemploBancoDeDados02
             {
                 tipoOrdem = "DESC";
             }
-                
 
+            dataGridView1.Rows.Clear();
+
+            string pesquisa = "";
             
-            List<Heroi> herois = new HeroiRepositorio().ObterTodos(textBox1.Text);
+            List<Heroi> herois = new HeroiRepositorio().ObterTodos(textBox1.Text, coluna, tipoOrdem);
             foreach(Heroi heroi in herois)
            
             {
@@ -68,6 +65,11 @@ namespace ExemploBancoDeDados02
             }
         }
         private void ListaHerois_Load(object sender, EventArgs e)
+        {
+            AtualizarLista();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
             AtualizarLista();
         }

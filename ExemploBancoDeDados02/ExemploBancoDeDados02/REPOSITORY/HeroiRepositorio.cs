@@ -43,6 +43,7 @@ namespace ExemploBancoDeDados02.REPOSITORY
         public bool Alterar(Heroi heroi) { return false; }
         public List<Heroi> ObterTodos(string textoParaPesquisar = "%%", string colunaParaOrdenar = "nome", string colunaParaOrdem = "ASC")
         {
+            textoParaPesquisar = "%" + textoParaPesquisar + "%";
             List<Heroi> herois = new List<Heroi>();
             connection.Open();
             SqlCommand comando = new SqlCommand();
