@@ -17,3 +17,4 @@ C:\Users\104962\Documents\GitHub\WFA-Banco-de-Dados\ExemploBancoDeDados02\Exempl
 C:\Users\104962\Documents\GitHub\WFA-Banco-de-Dados\ExemploBancoDeDados02\ExemploBancoDeDados02\obj\Debug\ExemploBancoDeDados02.csproj.GenerateResource.Cache
 C:\Users\104962\Documents\GitHub\WFA-Banco-de-Dados\ExemploBancoDeDados02\ExemploBancoDeDados02\obj\Debug\ExemploBancoDeDados02.CadastroHeroi.resources
 C:\Users\104962\Documents\GitHub\WFA-Banco-de-Dados\ExemploBancoDeDados02\ExemploBancoDeDados02\obj\Debug\ExemploBancoDeDados02.ListaHerois.resources
+C:\Users\104962\Documents\GitHub\WFA-Banco-de-Dados\ExemploBancoDeDados02\ExemploBancoDeDados02\obj\Debug\ExemploBancoDeDados02.EstatisticasHerois.resources

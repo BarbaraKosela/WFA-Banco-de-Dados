@@ -50,6 +50,12 @@
     <Compile Include="CadastroHeroi.Designer.cs">
       <DependentUpon>CadastroHeroi.cs</DependentUpon>
     </Compile>
+    <Compile Include="EstatisticasHerois.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstatisticasHerois.Designer.cs">
+      <DependentUpon>EstatisticasHerois.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListaHerois.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="REPOSITORY\HeroiRepositorio.cs" />
     <EmbeddedResource Include="CadastroHeroi.resx">
       <DependentUpon>CadastroHeroi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstatisticasHerois.resx">
+      <DependentUpon>EstatisticasHerois.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListaHerois.resx">
       <DependentUpon>ListaHerois.cs</DependentUpon>

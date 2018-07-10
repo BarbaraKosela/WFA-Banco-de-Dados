@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExemploBancoDeDados02.REPOSITORY;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace ExemploBancoDeDados02
         public EstatisticasHerois()
         {
             InitializeComponent();
+        }
+
+        private void EstatisticasHerois_Load(object sender, EventArgs e)
+        {
+            double totalContas = new HeroiRepositorio().ObterTotalDasContas();
+            lblTotalContasBancarias.Text = Convert.ToString(totalContas);
+
         }
     }
 }
