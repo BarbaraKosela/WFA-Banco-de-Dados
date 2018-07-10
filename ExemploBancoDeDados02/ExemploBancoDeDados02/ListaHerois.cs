@@ -76,7 +76,19 @@ namespace ExemploBancoDeDados02
 
         private void button3_Click(object sender, EventArgs e)
         {
+            int linhaSelecionada = dataGridView1.CurrentRow.Index;
+            int codigo =Convert.ToInt32(dataGridView1.Rows[linhaSelecionada].Cells[0].Value.ToString());
+            bool apagado = new HeroiRepositorio().Apagar(codigo);
+            if (apagado)
+            {
+                dataGridView1.Rows.RemoveAt(linhaSelecionada);
+                MessageBox.Show("Registro apagado com sucesso");
+            }
 
+            else
+            {
+                MessageBox.Show("Não foi possível apagar");
+            }
         }
     
     
