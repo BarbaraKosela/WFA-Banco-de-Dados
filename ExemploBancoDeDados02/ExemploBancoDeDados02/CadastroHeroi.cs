@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace ExemploBancoDeDados02
 {
-    public partial class Form1 : Form
+    public partial class CadastroHeroi : Form
     {
-        public Form1()
+        public CadastroHeroi()
         {
             InitializeComponent();
         }
@@ -24,14 +24,23 @@ namespace ExemploBancoDeDados02
             Heroi heroi = new Heroi();
             heroi.Nome = txtNome.Text;
             heroi.NomePessoa = TXTNOMEPESSOA.Text;
-            heroi.ContaBancaria =  Convert.ToDouble(txtContaBancaria.Text);
+            heroi.ContaBancaria = Convert.ToDouble(txtContaBancaria.Text);
             heroi.DataNascimento = dtpDataNascimento.Value;
             heroi.Escuridao = radioButton1.Checked;
             heroi.QuantidadeFilmes = Convert.ToByte(TXTQUANTIDADEFILMES.Text);
             heroi.Raca = CBRACA.SelectedItem.ToString();
             heroi.Sexo = CHBMULHER.Checked ? 'f' : 'm';
             heroi.Descricao = rtbDescicao.Text;
-            new HeroiRepositorio().Inserir(heroi);
+            bool cadastrou = new HeroiRepositorio().Inserir(heroi);
+            if (cadastrou)
+            {
+                MessageBox.Show("Registro cadastrado com sucesso");
+            }
+
+            else
+            {
+                MessageBox.Show("Seu registro não foi cadastrado");
+            }
         }
     }
 }

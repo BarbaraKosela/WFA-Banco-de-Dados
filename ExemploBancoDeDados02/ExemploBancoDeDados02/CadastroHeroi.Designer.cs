@@ -1,6 +1,6 @@
 ﻿namespace ExemploBancoDeDados02
 {
-    partial class Form1
+    partial class CadastroHeroi
     {
         /// <summary>
         /// Required designer variable.
