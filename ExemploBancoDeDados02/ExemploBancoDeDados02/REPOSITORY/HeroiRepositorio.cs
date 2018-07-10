@@ -40,7 +40,37 @@ namespace ExemploBancoDeDados02.REPOSITORY
         }
 
 
-        public bool Alterar(Heroi heroi) { return false; }
+        public bool Alterar(Heroi heroi) {
+            connection.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = connection;
+            comando.CommandText = @"@UPDATE herois SET nome = @NOME,
+data_nascimento = @DATA_NASCIMENTO,
+conta_bancaria = @CONTA_BANCARIA,
+nome_pessoa = @NOME_PESSOA,
+raca = @RACA,
+sexo = @SEXO,
+quantidade_filmes = @QUANTIDADE_FILMES,
+escuridao = @ESCURIDAO,
+descricao = @DESCRICAO WHERE id = @ID";
+
+
+            comando.Parameters.AddWithValue("@NOME", heroi.Nome);
+            comando.Parameters.AddWithValue("@DATA_NASCIMENTO", heroi.DataNascimento);
+            comando.Parameters.AddWithValue("@CONTA_BANCARIA", heroi.ContaBancaria);
+            comando.Parameters.AddWithValue("@NOME_PESSOA", heroi.NomePessoa);
+            comando.Parameters.AddWithValue("@RACA", heroi.Raca);
+            comando.Parameters.AddWithValue("@SEXO", heroi.Sexo);
+            comando.Parameters.AddWithValue("@QUANTIDADE_FILMES", heroi.QuantidadeFilmes);
+            comando.Parameters.AddWithValue("@ESCURIDAO", heroi.Escuridao);
+            comando.Parameters.AddWithValue("@DESCRICAO", heroi.Descricao);
+            comando.Parameters.AddWithValue("@ID", heroi.Id);
+            int quantidadeAlterada = comando.ExecuteNonQuery();
+
+
+            connection.Close();
+            
+            return quantidadeAlterada == 1; }
         public List<Heroi> ObterTodos(string textoParaPesquisar = "%%", string colunaParaOrdenar = "nome", string colunaParaOrdem = "ASC")
         {
             textoParaPesquisar = "%" + textoParaPesquisar + "%";
@@ -87,6 +117,7 @@ ORDER BY " + colunaParaOrdenar + " " + colunaParaOrdem;
             heroi.Sexo = Convert.ToChar(tabelaEmMemoria.Rows[0][7].ToString());
             heroi.Escuridao = Convert.ToBoolean(tabelaEmMemoria.Rows[0][8].ToString());
             heroi.Descricao = tabelaEmMemoria.Rows[0][9].ToString();
+            
             connection.Close();
             return heroi; 
         
