@@ -22,15 +22,15 @@ namespace ExemploBancoDeDados02
         private void button1_Click(object sender, EventArgs e)
         {
             Heroi heroi = new Heroi();
-            heroi.Nome = "Batman";
-            heroi.NomePessoa = "Bruce Wayne";
-            heroi.ContaBancaria =  12000000000.00;
-            heroi.DataNascimento = new DateTime(1976, 2, 19);
-            heroi.Escuridao = true;
-            heroi.QuantidadeFilmes = 10;
-            heroi.Raca = "Humano";
-            heroi.Sexo = 'M';
-            heroi.Descricao = "";
+            heroi.Nome = txtNome.Text;
+            heroi.NomePessoa = TXTNOMEPESSOA.Text;
+            heroi.ContaBancaria =  Convert.ToDouble(txtContaBancaria.Text);
+            heroi.DataNascimento = dtpDataNascimento.Value;
+            heroi.Escuridao = radioButton1.Checked;
+            heroi.QuantidadeFilmes = Convert.ToByte(TXTQUANTIDADEFILMES.Text);
+            heroi.Raca = CBRACA.SelectedItem.ToString();
+            heroi.Sexo = CHBMULHER.Checked ? 'f' : 'm';
+            heroi.Descricao = rtbDescicao.Text;
             new HeroiRepositorio().Inserir(heroi);
         }
     }
