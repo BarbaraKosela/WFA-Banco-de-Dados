@@ -199,7 +199,7 @@
             this.radioButton3.AutoSize = true;
             this.radioButton3.BackColor = System.Drawing.Color.DarkRed;
             this.radioButton3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton3.Location = new System.Drawing.Point(456, 26);
+            this.radioButton3.Location = new System.Drawing.Point(432, 26);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(73, 24);
             this.radioButton3.TabIndex = 1;
@@ -223,12 +223,12 @@
             this.radioButton5.AutoSize = true;
             this.radioButton5.BackColor = System.Drawing.Color.DarkRed;
             this.radioButton5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton5.Location = new System.Drawing.Point(318, 26);
+            this.radioButton5.Location = new System.Drawing.Point(158, 26);
             this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(155, 24);
+            this.radioButton5.Size = new System.Drawing.Size(72, 24);
             this.radioButton5.TabIndex = 0;
             this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "DESCENDENTE";
+            this.radioButton5.Text = "DESC";
             this.radioButton5.UseVisualStyleBackColor = false;
             // 
             // radioButton6
@@ -236,12 +236,12 @@
             this.radioButton6.AutoSize = true;
             this.radioButton6.BackColor = System.Drawing.Color.DarkRed;
             this.radioButton6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton6.Location = new System.Drawing.Point(110, 26);
+            this.radioButton6.Location = new System.Drawing.Point(354, 26);
             this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(144, 24);
+            this.radioButton6.Size = new System.Drawing.Size(61, 24);
             this.radioButton6.TabIndex = 0;
             this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "ASCENDENTE";
+            this.radioButton6.Text = "ASC";
             this.radioButton6.UseVisualStyleBackColor = false;
             // 
             // groupBox2

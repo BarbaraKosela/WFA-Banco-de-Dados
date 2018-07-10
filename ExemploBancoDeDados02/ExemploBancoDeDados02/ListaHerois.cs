@@ -25,7 +25,33 @@ namespace ExemploBancoDeDados02
         }
         private void AtualizarLista()
         {
-            List<Heroi> herois = new HeroiRepositorio().ObterTodos();
+            string coluna = "";
+            if(radioButton1.Checked)
+            
+            {
+                coluna = "nome";
+
+            }
+
+            else if (radioButton2.Checked)
+            {
+                coluna = "conta_bancaria";
+            }
+
+            else if (radioButton3.Checked)
+            {
+                coluna = "raca";
+            }
+
+            string tipoOrdem = "ASC";
+            if(radioButton5.Checked)
+            {
+                coluna = "DESC";
+            }
+                
+
+            
+            List<Heroi> herois = new HeroiRepositorio().ObterTodos(textBox1.Text);
             foreach(Heroi heroi in herois)
            
             {
