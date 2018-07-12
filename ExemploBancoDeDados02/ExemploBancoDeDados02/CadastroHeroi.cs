@@ -26,6 +26,13 @@ namespace ExemploBancoDeDados02
             InitializeComponent();
             this.codigo = codigo;
             Heroi heroi = new HeroiRepositorio().ObterPeloCodigo(codigo);
+            PreencherCampos(heroi);
+
+
+        }
+
+        private void PreencherCampos(Heroi heroi)
+        {
             txtNome.Text = heroi.Nome;
             TXTNOMEPESSOA.Text = heroi.NomePessoa;
             txtcodigo.Text = Convert.ToString(heroi.Id);
@@ -43,8 +50,6 @@ namespace ExemploBancoDeDados02
             {
                 radioButton2.Checked = false;
             }
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -90,6 +95,27 @@ namespace ExemploBancoDeDados02
                     MessageBox.Show("Não foi possível alterar");
                 }
             }
+        }
+
+        private void txtcodigo_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtcodigo.Text))
+            {
+                try
+                {
+                    int id = Convert.ToInt32(txtcodigo.Text);
+                    Heroi heroi = new HeroiRepositorio().ObterPeloCodigo(id);
+                    if (heroi != null)
+                    {
+                        PreencherCampos(heroi);
+                    }
+                }
+                catch (NoNullAllowedException ex)
+                {
+                    MessageBox.Show("Digite um código válido");
+
+                }
+            } 
         }
     }
 }

@@ -287,6 +287,7 @@
             this.txtcodigo.Name = "txtcodigo";
             this.txtcodigo.Size = new System.Drawing.Size(157, 27);
             this.txtcodigo.TabIndex = 18;
+            this.txtcodigo.Leave += new System.EventHandler(this.txtcodigo_Leave);
             // 
             // CadastroHeroi
             // 
