@@ -91,6 +91,7 @@
             this.button4.TabIndex = 12;
             this.button4.Text = "ATUALIZAR";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -127,6 +128,7 @@
             this.button1.TabIndex = 9;
             this.button1.Text = "CADASTRAR";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 

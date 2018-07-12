@@ -65,7 +65,7 @@ nota02 = @NOTA02, nota03 = @NOTA03, frequencia = @FREQUENCIA WHERE id = @ID)";
             SqlCommand comando = new SqlCommand();
             comando.Connection = connection;
             comando.CommandText = @"SELECT id, nome, codigo_matricula, nota01,
-nota02, nota03, frequencia WHERE nome LIKE @PESQUISA OR codigo_matricula LIKE @PESQUISA ORDER BY " + ordenar + "" + ordem;
+nota02, nota03, frequencia FROM alunos WHERE nome LIKE @PESQUISA OR codigo_matricula LIKE @PESQUISA ORDER BY " + ordenar + "" + ordem;
             comando.Parameters.AddWithValue("@PESQUISA", textoPesquisar);
             DataTable tabelaEmMemoria = new DataTable();
             tabelaEmMemoria.Load(comando.ExecuteReader());
@@ -83,6 +83,7 @@ nota02, nota03, frequencia WHERE nome LIKE @PESQUISA OR codigo_matricula LIKE @P
                 aluno.Nota_01 = Convert.ToDouble(tabelaEmMemoria.Rows[i][3].ToString());
                 aluno.Nota_02 = Convert.ToDouble(tabelaEmMemoria.Rows[i][4].ToString());
                 aluno.Nota_03 = Convert.ToDouble(tabelaEmMemoria.Rows[i][5].ToString());
+                aluno.Frequencia = Convert.ToInt32(tabelaEmMemoria.Rows[i][6].ToString());
             }
             connection.Close();
             return alunos;
