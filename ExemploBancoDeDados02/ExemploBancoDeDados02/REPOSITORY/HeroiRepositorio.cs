@@ -23,7 +23,11 @@ namespace ExemploBancoDeDados02.REPOSITORY
             connection.Open();
             SqlCommand comando = new SqlCommand();
             comando.Connection = connection;
-            comando.CommandText = "INSERT INTO herois (nome, escuridao, nome_pessoa, raca, conta_bancaria, data_nascimento, sexo, quantidade_filmes, descricao) VALUES (@NOME, @ESCURIDAO, @NOME_PESSOA, @RACA, @CONTA_BANCARIA, @DATA_NASCIMENTO, @SEXO, @QUANTIDADE_FILMES, @DESCRICAO)";
+            comando.CommandText = @"INSERT INTO herois (nome, escuridao, nome_pessoa,
+raca, conta_bancaria, data_nascimento, sexo, quantidade_filmes, descricao) 
+OUTPUT INSERTED.ID
+VALUES (@NOME, @ESCURIDAO, @NOME_PESSOA, @RACA, @CONTA_BANCARIA, @DATA_NASCIMENTO, @SEXO,
+@QUANTIDADE_FILMES, @DESCRICAO)";
             comando.Parameters.AddWithValue("@NOME", heroi.Nome);
             comando.Parameters.AddWithValue("@ESCURIDAO", heroi.Escuridao);
             comando.Parameters.AddWithValue("@NOME_PESSOA", heroi.NomePessoa);

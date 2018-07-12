@@ -114,12 +114,15 @@ namespace ExemploBancoDeDados02
                     {
                         MessageBox.Show("Código não existente");
                         txtcodigo.Focus();
+
+                        txtcodigo.SelectionStart = 0;
+                        txtcodigo.SelectionLength = txtcodigo.Text.Length;
                     }
                 }
                 catch (NoNullAllowedException ex)
                 {
                     MessageBox.Show("Digite um código válido");
-
+                    txtcodigo.Focus();
                 }
             } 
         }
