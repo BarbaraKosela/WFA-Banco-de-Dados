@@ -69,11 +69,10 @@ descricao = @DESCRICAO WHERE id = @ID";
             comando.Parameters.AddWithValue("@DESCRICAO", heroi.Descricao);
             comando.Parameters.AddWithValue("@ID", heroi.Id);
             int quantidadeAlterada = comando.ExecuteNonQuery();
-
-
             connection.Close();
-            
-            return quantidadeAlterada == 1; }
+
+            return quantidadeAlterada == 1;
+        }
         public List<Heroi> ObterTodos(string textoParaPesquisar = "%%", string colunaParaOrdenar = "nome", string colunaParaOrdem = "ASC")
         {
             textoParaPesquisar = "%" + textoParaPesquisar + "%";
@@ -109,7 +108,7 @@ ORDER BY " + colunaParaOrdenar + " " + colunaParaOrdem;
             connection.Open();
             SqlCommand comando = new SqlCommand();
             comando.Connection = connection;
-            comando.CommandText = @"SELECT id, nome, nome_pessoa, raca, conta_bancaria, quantidade_filmes, data_nascimento, sexo, escuridao, descricao FROM herois";
+            comando.CommandText = @"SELECT id, nome, nome_pessoa, raca, conta_bancaria, quantidade_filmes, data_nascimento, sexo, escuridao, descricao FROM herois WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", codigo);
             DataTable tabelaEmMemoria = new DataTable();
             tabelaEmMemoria.Load(comando.ExecuteReader());
