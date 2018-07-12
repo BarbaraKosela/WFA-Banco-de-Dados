@@ -11,7 +11,7 @@ namespace Atividade01_BancoDeDados_WFA.REPOSITÓRIO
 {
     class AlunosRepositorio
     {
-        private string conectarAString = @"C:\USERS\104962\DOCUMENTS\ATIVIDADE01_BANCODEDADOS_WFA.MDF";
+        private string conectarAString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\104962\Documents\Atividade01_BancoDeDados_WFA.mdf;Integrated Security=True;Connect Timeout=30";
         private SqlConnection connection = null;
         public AlunosRepositorio()
         {
