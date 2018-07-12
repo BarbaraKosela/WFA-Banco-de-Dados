@@ -102,6 +102,41 @@ namespace ExemploBancoDeDados02
             int codigo = Convert.ToInt32(dataGridView1.Rows[linhaSelecionada].Cells[0].Value.ToString());
             new CadastroHeroi(codigo).ShowDialog();
         }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            AtualizarLista();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            AtualizarLista();
+        }
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            AtualizarLista();
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            AtualizarLista();
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            AtualizarLista();
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+            AtualizarLista();
+        }
+
+        private void ListaHerois_Activated(object sender, EventArgs e)
+        {
+            AtualizarLista();
+        }
     
     
     }

@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1RACA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1CONTABANCARIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -38,17 +42,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Column1ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1NOME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1RACA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1CONTABANCARIA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -71,6 +71,34 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(550, 240);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // Column1ID
+            // 
+            this.Column1ID.HeaderText = "ID";
+            this.Column1ID.Name = "Column1ID";
+            this.Column1ID.ReadOnly = true;
+            this.Column1ID.Visible = false;
+            // 
+            // Column1NOME
+            // 
+            this.Column1NOME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1NOME.HeaderText = "NOME";
+            this.Column1NOME.Name = "Column1NOME";
+            this.Column1NOME.ReadOnly = true;
+            // 
+            // Column1RACA
+            // 
+            this.Column1RACA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1RACA.HeaderText = "RAÇA";
+            this.Column1RACA.Name = "Column1RACA";
+            this.Column1RACA.ReadOnly = true;
+            // 
+            // Column1CONTABANCARIA
+            // 
+            this.Column1CONTABANCARIA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1CONTABANCARIA.HeaderText = "CONTA BANCÁRIA";
+            this.Column1CONTABANCARIA.Name = "Column1CONTABANCARIA";
+            this.Column1CONTABANCARIA.ReadOnly = true;
             // 
             // button1
             // 
@@ -139,6 +167,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(271, 27);
             this.textBox1.TabIndex = 6;
+            this.textBox1.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
             // label1
             // 
@@ -173,18 +202,19 @@
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             // 
-            // radioButton1
+            // radioButton3
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.BackColor = System.Drawing.Color.DarkRed;
-            this.radioButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton1.Location = new System.Drawing.Point(6, 26);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(169, 24);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "NOME DO HERÓI";
-            this.radioButton1.UseVisualStyleBackColor = false;
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.BackColor = System.Drawing.Color.DarkRed;
+            this.radioButton3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.radioButton3.Location = new System.Drawing.Point(432, 26);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(73, 24);
+            this.radioButton3.TabIndex = 1;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "RAÇA";
+            this.radioButton3.UseVisualStyleBackColor = false;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -198,19 +228,21 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "CONTA BANCÁRIA";
             this.radioButton2.UseVisualStyleBackColor = false;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
-            // radioButton3
+            // radioButton1
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.BackColor = System.Drawing.Color.DarkRed;
-            this.radioButton3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.radioButton3.Location = new System.Drawing.Point(432, 26);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(73, 24);
-            this.radioButton3.TabIndex = 1;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "RAÇA";
-            this.radioButton3.UseVisualStyleBackColor = false;
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.BackColor = System.Drawing.Color.DarkRed;
+            this.radioButton1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.radioButton1.Location = new System.Drawing.Point(6, 26);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(169, 24);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "NOME DO HERÓI";
+            this.radioButton1.UseVisualStyleBackColor = false;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // label3
             // 
@@ -235,6 +267,7 @@
             this.radioButton5.TabStop = true;
             this.radioButton5.Text = "DESC";
             this.radioButton5.UseVisualStyleBackColor = false;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
             // 
             // radioButton6
             // 
@@ -248,6 +281,7 @@
             this.radioButton6.TabStop = true;
             this.radioButton6.Text = "ASC";
             this.radioButton6.UseVisualStyleBackColor = false;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
             // 
             // groupBox2
             // 
@@ -258,34 +292,6 @@
             this.groupBox2.Size = new System.Drawing.Size(570, 65);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
-            // 
-            // Column1ID
-            // 
-            this.Column1ID.HeaderText = "ID";
-            this.Column1ID.Name = "Column1ID";
-            this.Column1ID.ReadOnly = true;
-            this.Column1ID.Visible = false;
-            // 
-            // Column1NOME
-            // 
-            this.Column1NOME.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1NOME.HeaderText = "NOME";
-            this.Column1NOME.Name = "Column1NOME";
-            this.Column1NOME.ReadOnly = true;
-            // 
-            // Column1RACA
-            // 
-            this.Column1RACA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1RACA.HeaderText = "RAÇA";
-            this.Column1RACA.Name = "Column1RACA";
-            this.Column1RACA.ReadOnly = true;
-            // 
-            // Column1CONTABANCARIA
-            // 
-            this.Column1CONTABANCARIA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1CONTABANCARIA.HeaderText = "CONTA BANCÁRIA";
-            this.Column1CONTABANCARIA.Name = "Column1CONTABANCARIA";
-            this.Column1CONTABANCARIA.ReadOnly = true;
             // 
             // ListaHerois
             // 
@@ -306,10 +312,11 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Square721 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "ListaHerois";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de heróis";
+            this.Activated += new System.EventHandler(this.ListaHerois_Activated);
             this.Load += new System.EventHandler(this.ListaHerois_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
