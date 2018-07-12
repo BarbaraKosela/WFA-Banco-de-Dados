@@ -83,6 +83,11 @@ ORDER BY " + colunaParaOrdenar + " " + colunaParaOrdem;
             comando.Parameters.AddWithValue("@PESQUISA", textoParaPesquisar);
             DataTable tabelaEmMemoria = new DataTable();
             tabelaEmMemoria.Load(comando.ExecuteReader());
+
+            if (tabelaEmMemoria.Rows.Count == 0)
+            {
+                return null;
+            }
             for (int i = 0; i < tabelaEmMemoria.Rows.Count; i++)
             {
                 Heroi heroi = new Heroi();

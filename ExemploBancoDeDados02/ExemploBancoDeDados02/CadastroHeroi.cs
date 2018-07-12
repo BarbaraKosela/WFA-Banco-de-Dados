@@ -109,6 +109,12 @@ namespace ExemploBancoDeDados02
                     {
                         PreencherCampos(heroi);
                     }
+
+                    else
+                    {
+                        MessageBox.Show("Código não existente");
+                        txtcodigo.Focus();
+                    }
                 }
                 catch (NoNullAllowedException ex)
                 {
