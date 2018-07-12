@@ -57,7 +57,7 @@ nota02 = @NOTA02, nota03 = @NOTA03, frequencia = @FREQUENCIA WHERE id = @ID)";
             return quantidadeQueAlterou == 1;
         }
 
-        public List<Alunos> ObterTodosOsAlunos(string textoPesquisar = "%%", string ordenar = "nome", string ordem = "ASC")
+        public List<Alunos> ObterTodosOsAlunos(string textoPesquisar = "%%")
         {
             textoPesquisar = "%" + textoPesquisar + "%";
             List<Alunos> alunos = new List<Alunos>();
@@ -65,7 +65,7 @@ nota02 = @NOTA02, nota03 = @NOTA03, frequencia = @FREQUENCIA WHERE id = @ID)";
             SqlCommand comando = new SqlCommand();
             comando.Connection = connection;
             comando.CommandText = @"SELECT id, nome, codigo_matricula, nota01,
-nota02, nota03, frequencia FROM alunos WHERE nome LIKE @PESQUISA OR codigo_matricula LIKE @PESQUISA ORDER BY " + ordenar + "" + ordem;
+nota02, nota03, frequencia FROM alunos WHERE nome LIKE @PESQUISA OR codigo_matricula LIKE @PESQUISA";
             comando.Parameters.AddWithValue("@PESQUISA", textoPesquisar);
             DataTable tabelaEmMemoria = new DataTable();
             tabelaEmMemoria.Load(comando.ExecuteReader());
