@@ -9,3 +9,5 @@
 
 );
 
+SELECT * FROM alunos;
+

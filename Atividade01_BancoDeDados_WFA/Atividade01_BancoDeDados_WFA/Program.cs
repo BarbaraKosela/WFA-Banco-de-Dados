@@ -16,7 +16,7 @@ namespace Atividade01_BancoDeDados_WFA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CadastroDeAlunos());
+            Application.Run(new ListagemDeAlunos());
         }
     }
 }

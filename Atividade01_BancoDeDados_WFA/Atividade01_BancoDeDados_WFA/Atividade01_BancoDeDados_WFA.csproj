@@ -50,12 +50,21 @@
     <Compile Include="CadastroDeAlunos.Designer.cs">
       <DependentUpon>CadastroDeAlunos.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListagemDeAlunos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListagemDeAlunos.Designer.cs">
+      <DependentUpon>ListagemDeAlunos.cs</DependentUpon>
+    </Compile>
     <Compile Include="MODELO\Alunos.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="REPOSITÓRIO\AlunosRepositorio.cs" />
     <EmbeddedResource Include="CadastroDeAlunos.resx">
       <DependentUpon>CadastroDeAlunos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListagemDeAlunos.resx">
+      <DependentUpon>ListagemDeAlunos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
