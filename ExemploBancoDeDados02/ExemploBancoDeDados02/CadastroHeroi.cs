@@ -66,16 +66,15 @@ namespace ExemploBancoDeDados02
             heroi.Descricao = rtbDescicao.Text;
             if (string.IsNullOrEmpty(txtcodigo.Text)) 
             {
-                bool cadastrou = new HeroiRepositorio().Inserir(heroi);
-                if (cadastrou)
-                {
-                    MessageBox.Show("Registro cadastrado com sucesso");
-                }
+                int id = new HeroiRepositorio().Inserir(heroi);
 
-                else
-                {
-                    MessageBox.Show("Seu registro não foi cadastrado");
-                }
+                txtcodigo.Text = Convert.ToString(id);
+                MessageBox.Show("Registro cadastrado com sucesso");
+                
+
+                
+                   
+               
             }
 
             

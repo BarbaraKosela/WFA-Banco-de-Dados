@@ -19,7 +19,7 @@ namespace ExemploBancoDeDados02.REPOSITORY
 	        } 
 
 
-        public bool Inserir(Heroi heroi) {
+        public int Inserir(Heroi heroi) {
             connection.Open();
             SqlCommand comando = new SqlCommand();
             comando.Connection = connection;
@@ -37,10 +37,9 @@ VALUES (@NOME, @ESCURIDAO, @NOME_PESSOA, @RACA, @CONTA_BANCARIA, @DATA_NASCIMENT
             comando.Parameters.AddWithValue("@SEXO", heroi.Sexo);
             comando.Parameters.AddWithValue("@QUANTIDADE_FILMES", heroi.QuantidadeFilmes);
             comando.Parameters.AddWithValue("@DESCRICAO", heroi.Descricao);
-            int quantidadeRegistros = comando.ExecuteNonQuery();
+            int id = Convert.ToInt32(comando.ExecuteScalar().ToString());
             connection.Close();
-
-            return quantidadeRegistros == 1;
+            return id;
         }
 
 
