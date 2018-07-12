@@ -44,7 +44,7 @@ namespace ExemploBancoDeDados02.REPOSITORY
             connection.Open();
             SqlCommand comando = new SqlCommand();
             comando.Connection = connection;
-            comando.CommandText = @"@UPDATE herois SET nome = @NOME,
+            comando.CommandText = @"UPDATE herois SET nome = @NOME,
 data_nascimento = @DATA_NASCIMENTO,
 conta_bancaria = @CONTA_BANCARIA,
 nome_pessoa = @NOME_PESSOA,

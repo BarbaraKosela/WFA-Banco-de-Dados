@@ -59,15 +59,36 @@ namespace ExemploBancoDeDados02
             heroi.Raca = CBRACA.SelectedItem.ToString();
             heroi.Sexo = CHBMULHER.Checked ? 'f' : 'm';
             heroi.Descricao = rtbDescicao.Text;
-            bool cadastrou = new HeroiRepositorio().Inserir(heroi);
-            if (cadastrou)
+            if (string.IsNullOrEmpty(txtcodigo.Text)) 
             {
-                MessageBox.Show("Registro cadastrado com sucesso");
+                bool cadastrou = new HeroiRepositorio().Inserir(heroi);
+                if (cadastrou)
+                {
+                    MessageBox.Show("Registro cadastrado com sucesso");
+                }
+
+                else
+                {
+                    MessageBox.Show("Seu registro não foi cadastrado");
+                }
             }
 
+            
             else
             {
-                MessageBox.Show("Seu registro não foi cadastrado");
+                int id = Convert.ToInt32(txtcodigo.Text);
+                heroi.Id = id;
+                bool alterou = new HeroiRepositorio().Alterar(heroi);
+                if(alterou)
+                
+                {
+                    MessageBox.Show("Registro alterado com sucesso");
+                }
+
+                else
+                {
+                    MessageBox.Show("Não foi possível alterar");
+                }
             }
         }
     }
