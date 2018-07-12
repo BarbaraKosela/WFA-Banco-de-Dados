@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace Atividade01_BancoDeDados_WFA
 {
-    public partial class Form1 : Form
+    public partial class CadastroDeAlunos : Form
     {
-        public Form1()
+        private int codigo;
+        public CadastroDeAlunos()
         {
             InitializeComponent();
+        }
+
+        private void CadastroDeAlunos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
