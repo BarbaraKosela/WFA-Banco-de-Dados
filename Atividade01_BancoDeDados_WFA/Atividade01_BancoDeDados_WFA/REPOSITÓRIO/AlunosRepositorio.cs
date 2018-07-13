@@ -43,8 +43,12 @@ VALUES (@NOME, @CODIGO_MATRICULA, @NOTA01, @NOTA02, @NOTA03, @FREQUENCIA)";
             connection.Open();
             SqlCommand comando = new SqlCommand();
             comando.Connection = connection;
-            comando.CommandText = @"UPDATE alunos SET nome = @NOME, codigo_matricula = @CODIGO_MATRICULA, nota01 = @NOTA01,
-nota02 = @NOTA02, nota03 = @NOTA03, frequencia = @FREQUENCIA WHERE id = @ID";
+            comando.CommandText = @"UPDATE alunos SET nome = @NOME,
+codigo_matricula = @CODIGO_MATRICULA,
+nota01 = @NOTA01,
+nota02 = @NOTA02,
+nota03 = @NOTA03,
+frequencia = @FREQUENCIA WHERE id = @ID";
 
             comando.Parameters.AddWithValue("@NOME", aluno.Nome);
             comando.Parameters.AddWithValue("@CODIGO_MATRICULA", aluno.Matricula);

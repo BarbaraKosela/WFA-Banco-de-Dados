@@ -53,6 +53,7 @@
             this.lblTotalContasBancarias.Size = new System.Drawing.Size(20, 20);
             this.lblTotalContasBancarias.TabIndex = 1;
             this.lblTotalContasBancarias.Text = "0";
+            this.lblTotalContasBancarias.Click += new System.EventHandler(this.lblTotalContasBancarias_Click);
             // 
             // EstatisticasHerois
             // 
@@ -62,7 +63,7 @@
             this.Controls.Add(this.lblTotalContasBancarias);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Square721 BT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "EstatisticasHerois";
             this.Text = "Estatisticas dos heróis";
             this.Load += new System.EventHandler(this.EstatisticasHerois_Load);

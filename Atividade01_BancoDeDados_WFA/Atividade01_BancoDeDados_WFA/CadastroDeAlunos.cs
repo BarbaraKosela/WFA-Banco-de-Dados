@@ -30,15 +30,19 @@ namespace Atividade01_BancoDeDados_WFA
 
         private void CadastroDeAlunos_Load(object sender, EventArgs e)
         {
-            Alunos aluno = new Alunos();
-            double totalMedia = ((aluno.Nota_01 + aluno.Nota_02 + aluno.Nota_03) / 3);
-            label8.Text = Convert.ToString(totalMedia);
+            
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             Alunos aluno = new Alunos();
-            PreencherCampos(aluno);
+
+            aluno.Nome = txtNome.Text;
+            aluno.Matricula = txtNumeroDaMatricula.Text;
+            aluno.Nota_01 = Convert.ToDouble(txtNota1.Text);
+            aluno.Nota_02 = Convert.ToDouble(txtNota2.Text);
+            aluno.Nota_03 = Convert.ToDouble(txtNota3.Text);
+            aluno.Frequencia = Convert.ToInt32(txtFrequencia.Text);
 
             if (string.IsNullOrEmpty(txtCodigo.Text))
             {

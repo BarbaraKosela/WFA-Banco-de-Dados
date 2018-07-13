@@ -24,5 +24,10 @@ namespace ExemploBancoDeDados02
             lblTotalContasBancarias.Text = Convert.ToString(totalContas);
 
         }
+
+        private void lblTotalContasBancarias_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

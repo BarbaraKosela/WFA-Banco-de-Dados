@@ -100,7 +100,11 @@ ORDER BY " + colunaParaOrdenar + " " + colunaParaOrdem;
                 herois.Add(heroi);
             }
             connection.Close();
-            return herois; }
+            return herois; 
+        }
+
+
+
         public Heroi ObterPeloCodigo(int codigo) 
         
         
@@ -108,7 +112,9 @@ ORDER BY " + colunaParaOrdenar + " " + colunaParaOrdem;
             connection.Open();
             SqlCommand comando = new SqlCommand();
             comando.Connection = connection;
-            comando.CommandText = @"SELECT id, nome, nome_pessoa, raca, conta_bancaria, quantidade_filmes, data_nascimento, sexo, escuridao, descricao FROM herois WHERE id = @ID";
+            comando.CommandText = @"SELECT id, nome, nome_pessoa, raca, 
+conta_bancaria, quantidade_filmes, data_nascimento, 
+sexo, escuridao, descricao FROM herois WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", codigo);
             DataTable tabelaEmMemoria = new DataTable();
             tabelaEmMemoria.Load(comando.ExecuteReader());
