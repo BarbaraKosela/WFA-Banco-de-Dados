@@ -30,7 +30,8 @@ namespace Atividade01_BancoDeDados_WFA
 
         private void CadastroDeAlunos_Load(object sender, EventArgs e)
         {
-            
+            double totalContas = new AlunosRepositorio().ObterMedia(codigo);
+            label8.Text = Convert.ToString(totalContas);
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)

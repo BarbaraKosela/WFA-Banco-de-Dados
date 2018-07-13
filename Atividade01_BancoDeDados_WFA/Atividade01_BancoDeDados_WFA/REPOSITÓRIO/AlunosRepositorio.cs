@@ -135,16 +135,32 @@ nota02, nota03, frequencia FROM alunos WHERE id = @ID";
             return quantidade == 1;
         }
 
-        public double ObterMedia()
+        public double ObterMedia(int codigo)
         {
             connection.Open();
             SqlCommand comando = new SqlCommand();
             comando.Connection = connection;
-            comando.CommandText = "SELECT ((nota01 + nota02 + nota03) /3) FROM alunos WHERE LEN(nome) = (SELECT MAX(LEN(nome)) FROM alunos)";
+            comando.CommandText = "SELECT (nota01 + nota02 + nota03) /3 FROM alunos WHERE id = @ID";
+            comando.Parameters.AddWithValue("@ID", codigo);
             double total = Convert.ToDouble(comando.ExecuteScalar());
             connection.Close();
             return total;
 
+        }
+
+        public double ObterFrequencia(int codigo)
+        {
+            connection.Open();
+            SqlCommand comando = new SqlCommand();
+            comando.Connection = connection;
+            comando.CommandText = "SELECT (nota01 + nota02 + nota03) /3 FROM alunos WHERE id = @ID";
+            comando.Parameters.AddWithValue("@ID", codigo);
+            double frequencias = Convert.ToDouble(comando.ExecuteScalar());
+            connection.Close();
+            return frequencias;
+
+
+            connection.Close();
         }
 
     }
