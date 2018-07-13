@@ -30,7 +30,9 @@ namespace Atividade01_BancoDeDados_WFA
 
         private void CadastroDeAlunos_Load(object sender, EventArgs e)
         {
-
+            Alunos aluno = new Alunos();
+            double totalMedia = ((aluno.Nota_01 + aluno.Nota_02 + aluno.Nota_03) / 3);
+            label8.Text = Convert.ToString(totalMedia);
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -67,12 +69,13 @@ namespace Atividade01_BancoDeDados_WFA
 
         private void PreencherCampos(Alunos aluno)
         {
-            aluno.Nome = txtNome.Text;
-            aluno.Matricula = txtNumeroDaMatricula.Text;
-            aluno.Nota_01 = Convert.ToDouble(txtNota1.Text);
-            aluno.Nota_02 = Convert.ToDouble(txtNota2.Text);
-            aluno.Nota_03 = Convert.ToDouble(txtNota3.Text);
-            aluno.Frequencia = Convert.ToInt32(txtFrequencia.Text);
+            txtCodigo.Text = Convert.ToString(aluno.Id);
+            txtNome.Text = aluno.Nome;
+            txtNumeroDaMatricula.Text = aluno.Matricula;
+            txtNota1.Text = Convert.ToString(aluno.Nota_01);
+            txtNota2.Text = Convert.ToString(aluno.Nota_02);
+            txtNota3.Text = Convert.ToString(aluno.Nota_03);
+            txtFrequencia.Text = Convert.ToString(aluno.Frequencia);
         }
 
         private void txtCodigo_Leave(object sender, EventArgs e)

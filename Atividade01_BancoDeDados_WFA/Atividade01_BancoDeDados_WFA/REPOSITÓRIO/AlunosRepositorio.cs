@@ -43,8 +43,8 @@ VALUES (@NOME, @CODIGO_MATRICULA, @NOTA01, @NOTA02, @NOTA03, @FREQUENCIA)";
             connection.Open();
             SqlCommand comando = new SqlCommand();
             comando.Connection = connection;
-            comando.CommandText = @"UPDATE alunos SET nome = @NOME, codigo_matricula = @CONTA_BANCARIA, nota01 = @NOTA01,
-nota02 = @NOTA02, nota03 = @NOTA03, frequencia = @FREQUENCIA WHERE id = @ID)";
+            comando.CommandText = @"UPDATE alunos SET nome = @NOME, codigo_matricula = @CODIGO_MATRICULA, nota01 = @NOTA01,
+nota02 = @NOTA02, nota03 = @NOTA03, frequencia = @FREQUENCIA WHERE id = @ID";
 
             comando.Parameters.AddWithValue("@NOME", aluno.Nome);
             comando.Parameters.AddWithValue("@CODIGO_MATRICULA", aluno.Matricula);
@@ -52,6 +52,7 @@ nota02 = @NOTA02, nota03 = @NOTA03, frequencia = @FREQUENCIA WHERE id = @ID)";
             comando.Parameters.AddWithValue("@NOTA02", aluno.Nota_02);
             comando.Parameters.AddWithValue("@NOTA03", aluno.Nota_03);
             comando.Parameters.AddWithValue("@FREQUENCIA", aluno.Frequencia);
+            comando.Parameters.AddWithValue("@ID", aluno.Id);
             int quantidadeQueAlterou = comando.ExecuteNonQuery();
             connection.Close();
             return quantidadeQueAlterou == 1;
@@ -84,7 +85,10 @@ nota02, nota03, frequencia FROM alunos WHERE nome LIKE @PESQUISA OR codigo_matri
                 aluno.Nota_02 = Convert.ToDouble(tabelaEmMemoria.Rows[i][4].ToString());
                 aluno.Nota_03 = Convert.ToDouble(tabelaEmMemoria.Rows[i][5].ToString());
                 aluno.Frequencia = Convert.ToInt32(tabelaEmMemoria.Rows[i][6].ToString());
+                alunos.Add(aluno);   
+                
             }
+
             connection.Close();
             return alunos;
         }
@@ -96,10 +100,11 @@ nota02, nota03, frequencia FROM alunos WHERE nome LIKE @PESQUISA OR codigo_matri
             SqlCommand comando = new SqlCommand();
             comando.Connection = connection;
             comando.CommandText = @"SELECT id, nome, codigo_matricula, nota01,
-nota02, nota03, frequencia WHERE id = @ID";
+nota02, nota03, frequencia FROM alunos WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", codigo);
             DataTable tabelaEmMemoria = new DataTable();
             tabelaEmMemoria.Load(comando.ExecuteReader());
+           
             Alunos aluno = new Alunos();
             aluno.Id = Convert.ToInt32(tabelaEmMemoria.Rows[0][0].ToString());
             aluno.Nome = tabelaEmMemoria.Rows[0][1].ToString();
@@ -131,7 +136,7 @@ nota02, nota03, frequencia WHERE id = @ID";
             connection.Open();
             SqlCommand comando = new SqlCommand();
             comando.Connection = connection;
-            comando.CommandText = "SELECT nome, ((nota_1 + nota_2 + nota_3 + nota_4) /4) FROM alunos";
+            comando.CommandText = "SELECT ((nota01 + nota02 + nota03) /3) FROM alunos WHERE LEN(nome) = (SELECT MAX(LEN(nome)) FROM alunos)";
             double total = Convert.ToDouble(comando.ExecuteScalar());
             connection.Close();
             return total;

@@ -16,10 +16,7 @@ namespace Atividade01_BancoDeDados_WFA.MODELO
         public double Nota_03 { get; set; }
         public int Frequencia { get; set; }
 
-        internal void Add(Alunos aluno)
-        {
-            throw new NotFiniteNumberException();
-        }
+       
 
 
     }

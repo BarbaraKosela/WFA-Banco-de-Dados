@@ -24,8 +24,15 @@ namespace Atividade01_BancoDeDados_WFA
             AtualizarLista();
         }
 
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new CadastroDeAlunos().ShowDialog();
+        }
+
         private void AtualizarLista()
         {
+            
             dataGridView1.Rows.Clear();
             string pesquisa = "";
             List<Alunos> alunos = new AlunosRepositorio().ObterTodosOsAlunos(textBox1.Text);
@@ -40,23 +47,64 @@ namespace Atividade01_BancoDeDados_WFA
                     aluno.Nota_01,
                     aluno.Nota_02,
                     aluno.Nota_03
-                    
-                
                 });
             }
 
             
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            new CadastroDeAlunos().ShowDialog();
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             AtualizarLista();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int linhaSelecionada = dataGridView1.CurrentRow.Index;
+            int codigo = Convert.ToInt32(dataGridView1.Rows[linhaSelecionada].Cells[0].Value.ToString());
+            bool apagado = new AlunosRepositorio().Apagar(codigo);
+
+            if (apagado)
+            {
+                dataGridView1.Rows.RemoveAt(linhaSelecionada);
+                MessageBox.Show("Registro apagado com sucesso");
+            }
+
+            else
+            {
+                MessageBox.Show("Não foi possível apagar");
+            }
+        }
+
+        private void label3_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int linhaSelecionada = dataGridView1.CurrentRow.Index;
+            int codigo = Convert.ToInt32(dataGridView1.Rows[linhaSelecionada].Cells[0].Value.ToString());
+            new CadastroDeAlunos(codigo).ShowDialog();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+          
+        }
+
+
+
+
 
 
     }
