@@ -32,6 +32,35 @@ namespace Atividade01_BancoDeDados_WFA
         {
             double totalContas = new AlunosRepositorio().ObterMedia(codigo);
             label8.Text = Convert.ToString(totalContas);
+            double frequenciaDoAluno = new AlunosRepositorio().ObterFrequencia(codigo);
+            double MediaAux = 0;
+            string situacaoAluno = string.Empty;
+
+
+            if (frequenciaDoAluno <= 65)
+            {
+                situacaoAluno = "Reprovado por frequência";
+            }
+            if (totalContas < 5)
+            {
+                MediaAux = totalContas;
+                situacaoAluno = "Reprovado por média";
+            }
+
+            else if (totalContas < 7)
+            {
+                MediaAux = totalContas;
+                situacaoAluno = "Exame";
+            }
+
+            else if (totalContas >= 7)
+            {
+                MediaAux = totalContas;
+                situacaoAluno = "Aprovado";
+            }
+
+            label10.Text = Convert.ToString(situacaoAluno);
+
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
