@@ -153,7 +153,7 @@ nota02, nota03, frequencia FROM alunos WHERE id = @ID";
             connection.Open();
             SqlCommand comando = new SqlCommand();
             comando.Connection = connection;
-            comando.CommandText = "SELECT (nota01 + nota02 + nota03) /3 FROM alunos WHERE id = @ID";
+            comando.CommandText = "SELECT frequencia FROM alunos WHERE id = @ID";
             comando.Parameters.AddWithValue("@ID", codigo);
             double frequencias = Convert.ToDouble(comando.ExecuteScalar());
             connection.Close();
